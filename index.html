@@ -1206,6 +1206,16 @@
       .playlist-panel{grid-area:playlist;}
     }
     @media (max-width:860px){
+      html, body{
+        height:auto;
+        overflow-y:auto;
+        overflow-x:hidden;
+      }
+      .app{
+        height:auto;
+        min-height:100vh;
+        margin:10px;
+      }
       header{
         flex-direction:column;
         align-items:flex-start;
@@ -1216,12 +1226,46 @@
         justify-content:space-between;
       }
       .layout{
+        height:auto;
         grid-template-columns:1fr;
         grid-template-rows:auto auto auto;
         grid-template-areas:
           "player"
           "search"
           "playlist";
+      }
+      .search-results-mini,
+      .playlist-main{
+        flex:none;
+        height:auto;
+        overflow:visible;
+      }
+      .lyrics-container{
+        flex:none;
+        height:auto;
+        max-height:40vh;
+        overflow-y:auto;
+        overflow-x:hidden;
+      }
+      .player-main{
+        min-width:0;
+      }
+      .track-title-row{
+        flex-wrap:wrap;
+      }
+      .control-row{
+        flex-wrap:wrap;
+        gap:8px;
+      }
+      .volume-slider{
+        width:70px;
+        flex:1;
+        min-width:0;
+      }
+      .cover-wrapper{
+        width:90px;
+        height:90px;
+        flex-shrink:0;
       }
     }
   </style>
